@@ -1,6 +1,8 @@
 class CashRegister
   attr_accessor :total, :discount, :items
 
+  attr_accessor :total, :discount, :itemlist
+
   def initialize(disc = 0)
     @total = 0
     @discount = disc
@@ -45,5 +47,14 @@ class CashRegister
     void_item = @items.pop
     void = void_item.values
     @total -= void[0]
+
+    @itemlist = []
+  end
+  def add_item(title, price, quant = 1)
+    @total += price * quant
+    @itemlist << title
+  end
+  def apply_discount
+    puts @total -=@total*(@discount.to_f / 100)
   end
 end
