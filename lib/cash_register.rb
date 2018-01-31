@@ -47,7 +47,6 @@ class CashRegister
     void_item = @items.pop
     void = void_item.values
     @total -= void[0]
-
     @itemlist = []
   end
   def add_item(title, price, quant = 1)
