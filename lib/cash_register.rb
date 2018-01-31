@@ -47,7 +47,3 @@ class CashRegister
     @total -= void[0]
   end
 end
-
-m = CashRegister.new(20)
-m.add_item("tea", 1000)
-m.void_last_transaction
